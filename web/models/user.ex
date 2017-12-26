@@ -6,6 +6,7 @@ defmodule HelloPhoenix.User do
     field :username, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    has_many :room, HelloPhoenix.Room
   end
 
   def changeset(model, params \\ %{}) do

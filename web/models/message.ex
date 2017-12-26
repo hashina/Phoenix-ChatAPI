@@ -3,7 +3,7 @@ defmodule HelloPhoenix.Message do
 @derive {Poison.Encoder, only: [:id, :body]}
   schema "message" do
     field :body, :string
-    belongs_to :room, HelloPhoenix.Room
+    belongs_to :room, HelloPhoenix.Room, foreign_key: :room_id
 
     timestamps()
   end

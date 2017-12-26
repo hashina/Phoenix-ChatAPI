@@ -9,8 +9,8 @@ defmodule HelloPhoenix.RoomController do
 	def show(conn, %{"client_id" => id})  do
 		query = from(
 				r in Room,
-				preload: :message,
-				where: r.creatorId == ^id or r.guestId == ^id 
+				preload: [:message, :creator, :guest],
+				where: r.creator_id == ^id or r.guest_id == ^id 
 			)
 		rooms = Repo.all(query)
 		render conn, "show.json" , rooms: rooms
