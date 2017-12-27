@@ -5,4 +5,7 @@ defmodule HelloPhoenix.MessageView do
 	def render("show.json", %{message: message}) do
 		%{message: message}
 	end
+	def render("error.json", %{changeset: changeset}) do
+		%{changeset: changeset}
+	end
 end

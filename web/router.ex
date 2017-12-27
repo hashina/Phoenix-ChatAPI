@@ -30,5 +30,6 @@ defmodule HelloPhoenix.Router do
       get "/rooms", RoomController, :show
       post "/sessions", SessionController, :create
       get "/message", MessageController, :show
+      post "/message", MessageController, :create
   end
 end

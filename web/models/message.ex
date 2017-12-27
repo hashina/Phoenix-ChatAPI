@@ -13,7 +13,7 @@ defmodule HelloPhoenix.Message do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:body])
-    |> validate_required([:body])
+    |> cast(params, [:body, :room_id])
+    |> validate_required([:body, :room_id])
   end
 end
